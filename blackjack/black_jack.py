@@ -10,16 +10,18 @@
 # We should be able to draw the top card which returns the drawn card and also removes it from the deck
 # Deck should be represented as string in this format:
 # 12 cards -  3 Clubs, 3 Diamonds, 3 Hearts, 3 Spades
-#deck = Deck(12)
-#print(deck)
+#****deck = Deck(12)
+#****print(deck)
 # Should print out:
 # 12 cards -  3 Clubs, 3 Diamonds, 3 Hearts, 3 Spades
-#top_card = deck.draw()
-#print(top_card)
-#print(deck)
+#****top_card = deck.draw()
+#****print(top_card)
+#****print(deck)
 # Should print out:
 # Queen Spades
 # 11 cards - 3 Clubs, 3 Diamonds, 3 Hearts, 2 Spades
+
+import random
 
 
 class Card():
@@ -27,8 +29,6 @@ class Card():
     def __init__(self):
         self.color = ["Clubs", "Diamonds", "Hearts", "Spades"]
         self.value = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
-        self.card = self.value[9] + ' ' + self.color[1]
-        print(self.card)
 
 
 class Deck():
@@ -36,5 +36,19 @@ class Deck():
     def __init__(self, number):
         self.list_of_cards = []
         self.number = int(number)
+        self.list_of_cards_generator()
+
+    def list_of_cards_generator(self):
+        self.card = ''
+        for i in range(self.number):
+            self.card = random.choice(card.value) + " " + random.choice(card.color)
+            self.list_of_cards.append(self.card)
+        return self.list_of_cards
+
+    def draw_top_card(self):
+        top_card = self.list_of_cards[0]
+        self.list_of_cards = self.list_of_cards[1:]
+        return top_card
 
 card = Card()
+deck = Deck(12)
