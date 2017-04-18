@@ -34,9 +34,9 @@ class Card():
 class Deck():
 
 
-    def __init__(self):
+    def __init__(self, number):
         self.list_of_cards = []
-        self.number = 12
+        self.number = number
         self.list_of_cards_generator()
 
     def list_of_cards_generator(self):
