@@ -47,17 +47,19 @@ class Deck():
         self.spades = 0
         self.deck = ''
         for i in range(self.number):
-            self.card = random.choice(card.value) + " " + random.choice(card.color)
-            if card.color == "Clubs":
+            self.color = random.choice(card.color)
+            self.value = random.choice(card.value)
+            self.card =  self.value + " " + self.color
+            if self.color == "Clubs":
                 self.clubs += 1
-            if card.color == "Diamonds":
+            if self.color == "Diamonds":
                 self.diamonds += 1
-            if card.color == "Hearts":
+            if self.color == "Hearts":
                 self.hearts += 1
-            if card.color == "Spades":
+            if self.color == "Spades":
                 self.spades += 1
             self.list_of_cards.append(self.card)
-        self.deck = str(self.number) + "cards" + "  -  " + str(self.clubs) + "Clubs" + str(self.diamonds) + "Diamonds"  + str(self.hearts) + "Hearts" + str(self.spades) + "Spades"
+        self.deck = str(self.number) + "cards" + "  -  " + str(self.clubs) + " Clubs " + str(self.diamonds) + " Diamonds "  + str(self.hearts) + " Hearts " + str(self.spades) + " Spades "
         return self.deck
 
     def draw(self):
