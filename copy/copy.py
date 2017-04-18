@@ -27,9 +27,19 @@ class Control():
                 display.print_usage()
             if len(self.list_argv) == 1:
                 display.print_one_argument()
+            if len(self.list_argv) == 2:
+                self.reader()
+                self.writer()
 
-class Model():
-    pass
+    def reader(self):
+        my_file = open(self.list_argv[0], "r")
+        self.text = my_file.read()
+        my_file.close()
+
+    def writer(self):
+        created_file = open(self.list_argv[1], "w")
+        print(self.text, file = created_file)
+        created_file.close()
 
 
 class Display():
@@ -41,6 +51,5 @@ class Display():
         print("No destination provided")
 
 
-model = Model()
 display = Display()
 control = Control()
