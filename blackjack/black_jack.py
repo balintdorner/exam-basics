@@ -33,22 +33,34 @@ class Card():
 
 class Deck():
 
-    def __init__(self, number):
-        self.number = number
+
+    def __init__(self):
+        self.list_of_cards = []
+        self.number = 12
         self.list_of_cards_generator()
-        print(self.list_of_cards)
-        self.shuffle_list_of_cards()
-        print(self.shuffled_list)
 
     def list_of_cards_generator(self):
-        self.list_of_cards = []
         self.card = ''
+        self.clubs = 0
+        self.diamonds = 0
+        self.hearts = 0
+        self.spades = 0
+        self.deck = ''
         for i in range(self.number):
             self.card = random.choice(card.value) + " " + random.choice(card.color)
+            if card.color == "Clubs":
+                self.clubs += 1
+            if card.color == "Diamonds":
+                self.diamonds += 1
+            if card.color == "Hearts":
+                self.hearts += 1
+            if card.color == "Spades":
+                self.spades += 1
             self.list_of_cards.append(self.card)
-        return self.list_of_cards
+        self.deck = str(self.number) + "cards" + "  -  " + str(self.clubs) + "Clubs" + str(self.diamonds) + "Diamonds"  + str(self.hearts) + "Hearts" + str(self.spades) + "Spades"
+        return self.deck
 
-    def draw_top_card(self):
+    def draw(self):
         top_card = self.list_of_cards[0]
         self.list_of_cards = self.list_of_cards[1:]
         return top_card
@@ -59,3 +71,7 @@ class Deck():
 
 card = Card()
 deck = Deck(12)
+print(deck)
+top_card = deck.draw()
+print(top_card)
+print(deck)
