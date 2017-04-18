@@ -34,11 +34,14 @@ class Card():
 class Deck():
 
     def __init__(self, number):
-        self.list_of_cards = []
-        self.number = int(number)
+        self.number = number
         self.list_of_cards_generator()
+        print(self.list_of_cards)
+        self.shuffle_list_of_cards()
+        print(self.shuffled_list)
 
     def list_of_cards_generator(self):
+        self.list_of_cards = []
         self.card = ''
         for i in range(self.number):
             self.card = random.choice(card.value) + " " + random.choice(card.color)
@@ -49,6 +52,10 @@ class Deck():
         top_card = self.list_of_cards[0]
         self.list_of_cards = self.list_of_cards[1:]
         return top_card
+
+    def shuffle_list_of_cards(self):
+        self.shuffled_list = random.shuffle(self.list_of_cards)
+        return self.shuffled_list
 
 card = Card()
 deck = Deck(12)

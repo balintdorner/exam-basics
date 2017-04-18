@@ -36,14 +36,14 @@ The application is accepted if:
 
 #### Your answer:
 [add your answer here]   
-1:   
-2:   
-3:   
-4:   
-5:   
-6:   
-7:   
+1:   Keywords: marks the start of a function
+2:   Name: name of the function
+3:   Parameter: pass value(s) to a function
+4:   Code Block/Statements: all the codes we within the function goes here
+5:   Variable: store data
+6:   Statement: end the function
+7:   Value : this will be returned from the function
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
-[add your answer here]
+[It is an automatically method when you create a new instance of the class, we use:__init__() to create a constructor. It is used when we want to add values, or run functions automatically when a new instance is created]
