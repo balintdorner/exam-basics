@@ -12,9 +12,3 @@ def odd_average(number_list):
             sum_numbers += number
             average = sum_numbers/counter
     return average
-
-
-
-
-
-print(odd_average([1,2,5,8,2,10]))
